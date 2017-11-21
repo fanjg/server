@@ -104,9 +104,10 @@
 				.then(function(status, data) {
 					// the following lines should be extracted to a mapper
 
-					if( properties.indexOf(OC.Files.Client.PROPERTY_GETCONTENTLENGTH) !== -1
-					||  properties.indexOf(OC.Files.Client.PROPERTY_SIZE) !== -1 ) {
-						self.set('size', data.size);
+					if(properties.indexOf(OC.Files.Client.PROPERTY_GETCONTENTLENGTH) !== -1
+						||  properties.indexOf(OC.Files.Client.PROPERTY_SIZE) !== -1)
+					{
+						self.set({size: data.size}, {silent: true});
 					}
 
 					deferred.resolve(status, data);

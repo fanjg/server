@@ -161,7 +161,6 @@ OC.Share = _.extend(OC.Share || {}, {
 	updateIcon:function(itemType, itemSource) {
 		var shares = false;
 		var link = false;
-		var image = OC.imagePath('core', 'actions/share');
 		var iconClass = '';
 		$.each(OC.Share.itemShares, function(index) {
 			if (OC.Share.itemShares[index]) {
@@ -299,7 +298,6 @@ OC.Share = _.extend(OC.Share || {}, {
 		if (hasShares || ownerId) {
 			recipients = $tr.data('share-recipient-data');
 			action.addClass('shared-style');
-
 			avatars = '<span>' + t('core', 'Shared') + '</span>';
 			// even if reshared, only show "Shared by"
 			if (ownerId) {

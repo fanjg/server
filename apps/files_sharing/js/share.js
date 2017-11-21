@@ -196,7 +196,7 @@
 					// we need to modify the model
 					// (FIXME: yes, this is hacky)
 					icon: $tr.attr('data-icon')
-				});
+				}, {silent: true});
 			});
 			fileList.registerTabView(shareTab);
 
